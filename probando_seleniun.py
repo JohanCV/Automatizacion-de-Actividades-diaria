@@ -9,7 +9,7 @@ gmailAulavirtual = "jcalderonva@unsa.edu.pe"
 
 #"creamos una instancia de chrome hacia el aulavirtual"
 driver = webdriver.Chrome("C:\Python\Lib\site-packages\selenium\webdriver\chrome\chromedriver.exe")
-
+print("Iniciando bot")
 #ingreso al gmail
 driver.get("https://docs.google.com/spreadsheets/d/1ADLUu_4Jz1OxYdBRcZfBi3lUS0DjK0F_nFE21-NCGBo/edit#gid=986616540")
 email = driver.find_element_by_id('identifierId')
@@ -22,7 +22,7 @@ contra.send_keys("dragonball2010")
 driver.find_element_by_id('passwordNext').click()
 time.sleep(5)
 
-
+print("Ingresando al aula virtual")
 #ingreso al aulavirtual
 driver.get("http://dutic.unsa.edu.pe/aulavirtual/login/index.php")
 #"nos logeamos"
@@ -40,6 +40,7 @@ driver.get("http://dutic.unsa.edu.pe/aulavirtual/admin/user.php")
 driver.find_element_by_class_name("moreless-toggler").click()
 email_usuario = driver.find_element_by_id('id_email')
 email_usuario.send_keys(gmailAulavirtual)
+time.sleep(5)
 
 driver.find_element_by_id("id_addfilter").click()
-driver.find_element_by_id("yui_3_17_2_1_1554140446329_524").click()
+driver.find_element_by_id("//*[@id='yui_3_17_2_1_1554146167123_524']").click()
